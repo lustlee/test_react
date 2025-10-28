@@ -1,4 +1,4 @@
-import { createBrowserRouter, redirect } from "react-router-dom";
+import { createHashRouter, redirect } from "react-router-dom";
 import App from './App.tsx';
 import CharacterPage from '../pages/character-page/CharacterPage.tsx';
 import { ROUTES } from "../config/constants.ts";
@@ -9,7 +9,7 @@ import {
 	CreateCharacterPage
 } from '../pages/create-character-page/CreateCharacterPage.tsx';
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
 	{
 		Component: App,
 		children: [
@@ -28,7 +28,11 @@ export const router = createBrowserRouter([
 			{
 				path: ROUTES.HOME,
 				loader: () => redirect(ROUTES.CHARACTERS),
-			}
+			},
+			{
+				path: "*",
+				loader: () => redirect(ROUTES.CHARACTERS),
+			},
 		],
 	},
 ]);
