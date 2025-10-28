@@ -2,5 +2,5 @@ export const ROUTES = {
 	HOME: "/",
 	CHARACTERS:'/character-page',
 	CHARACTER:'/character-page/:id',
-	CREATE:'/create-product',
+	CREATE:'/create-character',
 } as const;

@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { useCharactersStore } from '../../store/characters-store.ts';
 import { CharacterCard } from '../character-card/CharacterCard.tsx';
+import { Link } from 'react-router-dom';
 
 type FilterType = 'all' | 'favorites';
 
 export const CharactersList: React.FC = () => {
-	const { characters, toggleLike, deleteCharacters, getLikedCharacters, loading, error } = useCharactersStore();
+	const { characters, toggleLike, deleteCharacter, getLikedCharacters, loading, error } = useCharactersStore();
 	const [filter, setFilter] = useState<FilterType>('all');
 	
 	const filteredCharacters = filter === 'favorites'
@@ -30,6 +31,19 @@ export const CharactersList: React.FC = () => {
 	
 	return (
 		<div className="container mx-auto px-4 py-8">
+			
+			<div className="flex justify-between items-center mb-8">
+				<h1 className="text-3xl font-bold text-gray-900">Rick and Morty Characters</h1>
+				<Link
+					to="/create-character"
+					className="bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition-colors font-semibold flex items-center space-x-2"
+				>
+					<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+					</svg>
+					<span>Create Character</span>
+				</Link>
+			</div>
 			
 			<div className="flex space-x-4 mb-8">
 				<button
@@ -60,7 +74,7 @@ export const CharactersList: React.FC = () => {
 						key={item.id}
 						character={item}
 						onToggleLike={toggleLike}
-						onDelete={deleteCharacters}
+						onDelete={deleteCharacter}
 					/>
 				))}
 			</div>

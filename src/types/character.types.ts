@@ -22,3 +22,25 @@ export interface Character {
 export interface CharacterWithLike extends  Character {
 	isLiked:boolean;
 }
+
+export interface CreateCharacterData {
+	name: string;
+	status: 'Alive' | 'Dead' | 'unknown';
+	species: string;
+	type: string;
+	gender: 'Female' | 'Male' | 'Genderless' | 'unknown';
+	origin: string;
+	location: string;
+	image: string;
+}
+
+export interface CharacterFormErrors {
+	name?: string;
+	status?: string;
+	species?: string;
+	type?: string;
+	gender?: string;
+	origin?: string;
+	location?: string;
+	image?: string;
+}
