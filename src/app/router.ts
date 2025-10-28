@@ -1,9 +1,11 @@
 import { createBrowserRouter, redirect } from "react-router-dom";
 import App from './App.tsx';
 import CharacterPage from '../pages/character-page/CharacterPage.tsx';
-import CharacterOnePage from '../pages/CharacterOnePage.tsx';
 import CreateCharacterPage from '../pages/CreateCharacterPage.tsx';
 import { ROUTES } from "../config/constants.ts";
+import {
+	CharacterDetailPage
+} from '../pages/character-detail-page/CharacterDetailPage.tsx';
 
 export const router = createBrowserRouter([
 	{
@@ -15,7 +17,7 @@ export const router = createBrowserRouter([
 			},
 			{
 				path: ROUTES.CHARACTER,
-				Component: CharacterOnePage,
+				Component: CharacterDetailPage,
 			},
 			{
 				path: ROUTES.CREATE,

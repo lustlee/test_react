@@ -19,7 +19,7 @@ const CharacterPage = () => {
 			</header>
 			
 			<main>
-				<CharactersList />
+				<CharactersList/>
 			</main>
 		</div>
 	);
