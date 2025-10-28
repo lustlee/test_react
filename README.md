@@ -15,3 +15,6 @@ Tailwind CSS	Utility-first styling
 date-fns	Date formatting and manipulation
 
 Rick and Morty API	Character data source
+
+## Link Github Pages
+### https://lustlee.github.io/test_react/#/character-page
