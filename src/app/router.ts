@@ -1,29 +1,29 @@
 import { createBrowserRouter, redirect } from "react-router-dom";
 import App from './App.tsx';
-import { ROUTES } from '../types/routes.ts';
-import Products from '../pages/Products.tsx';
-import ProductOne from '../pages/ProductOne.tsx';
-import CreateForm from '../pages/CreateForm.tsx';
+import CharacterPage from '../pages/character-page/CharacterPage.tsx';
+import CharacterOnePage from '../pages/CharacterOnePage.tsx';
+import CreateCharacterPage from '../pages/CreateCharacterPage.tsx';
+import { ROUTES } from "../config/constants.ts";
 
 export const router = createBrowserRouter([
 	{
 		Component: App,
 		children: [
 			{
-				path: ROUTES.PRODUCTS,
-				Component: Products,
+				path: ROUTES.CHARACTERS,
+				Component: CharacterPage,
 			},
 			{
-				path: ROUTES.PRODUCT,
-				Component: ProductOne,
+				path: ROUTES.CHARACTER,
+				Component: CharacterOnePage,
 			},
 			{
 				path: ROUTES.CREATE,
-				Component: CreateForm,
+				Component: CreateCharacterPage,
 			},
 			{
 				path: ROUTES.HOME,
-				loader: () => redirect(ROUTES.PRODUCTS),
+				loader: () => redirect(ROUTES.CHARACTERS),
 			}
 		],
 	},
