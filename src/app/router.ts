@@ -1,6 +1,5 @@
 import { createHashRouter, redirect } from "react-router-dom";
 import App from './App.tsx';
-import CharacterPage from '../pages/character-page/CharacterPage.tsx';
 import { ROUTES } from "../config/constants.ts";
 import {
 	CharacterDetailPage
@@ -8,6 +7,7 @@ import {
 import {
 	CreateCharacterPage
 } from '../pages/create-character-page/CreateCharacterPage.tsx';
+import { CharacterPage } from '../pages/character-page/CharacterPage.tsx';
 
 export const router = createHashRouter([
 	{

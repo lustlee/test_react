@@ -7,15 +7,14 @@ interface CharactersState {
 	characters: CharacterWithLike[];
 	loading: boolean;
 	error: string | null;
-	hasFetchedFromAPI: boolean; // ✅ Новое поле для отслеживания
+	hasFetchedFromAPI: boolean;
 	
-	// Действия
 	fetchCharacters: () => Promise<void>;
 	createCharacter: (characterData: CreateCharacterData) => Promise<CharacterWithLike>;
 	toggleLike: (id: number) => void;
 	deleteCharacter: (id: number) => void;
 	getLikedCharacters: () => CharacterWithLike[];
-	clearCharacters: () => void; // ✅ Новая функция для очистки
+	clearCharacters: () => void;
 }
 
 export const useCharactersStore = create<CharactersState>()(

@@ -209,54 +209,6 @@ export const CharacterDetailPage: React.FC = () => {
 						</div>
 					</div>
 				</div>
-				
-				<div className="max-w-4xl mx-auto mt-8 grid md:grid-cols-2 gap-6">
-					<div className="bg-white rounded-2xl shadow-lg p-6">
-						<h3 className="font-semibold text-gray-800 mb-4">API Information</h3>
-						<div className="space-y-3">
-							<div className="flex items-center justify-between py-2 border-b border-gray-100">
-								<span className="text-gray-600">Character URL</span>
-								<a
-									href={character.url}
-									target="_blank"
-									rel="noopener noreferrer"
-									className="text-blue-500 hover:text-blue-600 text-sm truncate ml-2 max-w-[200px]"
-								>
-									View in API
-								</a>
-							</div>
-							<div className="flex items-center justify-between py-2">
-								<span className="text-gray-600">Location URL</span>
-								{character.location.url ? (
-									<a
-										href={character.location.url}
-										target="_blank"
-										rel="noopener noreferrer"
-										className="text-blue-500 hover:text-blue-600 text-sm truncate ml-2 max-w-[200px]"
-									>
-										View Location
-									</a>
-								) : (
-									<span className="text-gray-400 text-sm">Not available</span>
-								)}
-							</div>
-						</div>
-					</div>
-					
-					<div className="bg-white rounded-2xl shadow-lg p-6">
-						<h3 className="font-semibold text-gray-800 mb-4">Quick Stats</h3>
-						<div className="grid grid-cols-2 gap-4">
-							<div className="text-center p-3 bg-green-50 rounded-lg">
-								<div className="text-2xl font-bold text-green-600">{character.episode.length}</div>
-								<div className="text-sm text-green-800">Episodes</div>
-							</div>
-							<div className="text-center p-3 bg-blue-50 rounded-lg">
-								<div className="text-2xl font-bold text-blue-600">{character.id}</div>
-								<div className="text-sm text-blue-800">Character ID</div>
-							</div>
-						</div>
-					</div>
-				</div>
 			</div>
 		</div>
 	);
